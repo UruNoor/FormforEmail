@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>اعدادية الحسين بن روح</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعدادية الحسين بن روح - الشكاوي</title>
     <style>
         /* General Styles */
         body {
@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             direction: rtl;
         }
 
@@ -27,10 +27,14 @@
             max-width: 500px;
         }
 
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #333;
             margin-bottom: 20px;
+        }
+
+        h2 {
+            color: chocolate;
         }
 
         label {
@@ -114,7 +118,7 @@
 <body>
     <div class="container">
         <h1>اعدادية الحسين بن روح</h1>
-        <h2 style="color: chocolate; text-align: center;">الشكاوي</h2>
+        <h2>الشكاوي</h2>
         <form action="https://formsubmit.co/mustafay867y@gmail.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
@@ -141,10 +145,11 @@
                     <option value="ه">ه</option>
                 </select>
             </div>
+
             <label for="complaint-type">اختر نوع الشكوى:</label>
             <div class="select-wrapper">
                 <select id="complaint-type" name="نوع_الشكوى" required>
-                    <option value="C0">Select</option>
+                    <option value="C0">اختر</option>
                     <option value="C1">شكوى بخصوص مدرس</option>
                     <option value="C2">شكوى بخصوص استاذ حازم</option>
                     <option value="C3">موضوع اخر</option>
