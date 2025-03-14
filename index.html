@@ -18,18 +18,25 @@
     </div>
 
     <h1><p style="color:chocolate;">الشكاوي</p></h1>
- <h1>Send an Email</h1>
-    <form action="mailto:noorhai.flower@gmail.com" method="post" enctype="text/plain">
-        <label for="to">To:</label><br>
-        <input type="email" id="to" name="to" value="noorhai.flower@gmail.com" readonly><br><br>
+    <h1>Submit a Complaint</h1>
+    <form action="submit_complaint.php" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
 
-        <label for="subject">Subject:</label><br>
-        <input type="text" id="subject" name="subject" required><br><br>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label for="body">Message:</label><br>
-        <textarea id="body" name="body" rows="4" cols="50" required></textarea><br><br>
+        <label for="complaint">Complaint:</label>
+        <textarea id="complaint" name="complaint" rows="5" required></textarea>
 
-        <input type="submit" value="Send Email">‏
+        <button type="submit">Submit Complaint</button>
+    </form>
+
+    <h2>Complaint Inbox</h2>
+    <div id="complaints">
+        <!-- Complaints will be displayed here -->
+        <?php include 'display_complaints.php'; ?>
+    </div>‏
         <p></p> <label> الصف</label>
         <select name="الصف" id="الصف">
        <option>الرابع </option>
