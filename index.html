@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>اعدادية الحسين بن روح</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+</head>
+<body dir="rtl">
+    <div class="container">
+        <h1><p style="color:rgb(0, 0, 0);">اعدادية الحسين بن روح</p></h1>
+    </div>
+
+    <h1><p style="color:chocolate;">الشكاوي</p></h1>
+    <form action="https://formsubmit.co/maynk2473@email.com" method="post">
+           <input type="email" name="email" required>
+        <input type="text" name="الاسم" required placeholder="الاسم"> 
+        <p></p> <label> الصف</label>
+        <select name="الصف" id="الصف">
+       <option>الرابع </option>
+       <option value>الخامس</option>
+       <option>السادس</option>
+        </select>
+        <p></p> <label>الشعبه</label>  
+        <select>
+          <option>أ</option>
+          <option>ب</option>
+          <option>ج</option>
+          <option>د</option>
+          <option>ه</option>
+        </select>        
+<P></P>
+        <label for="select"> اختر نوع الشكوى</label>
+        <select name="نوع الشكوى" id="شكوى">
+            <option value="C1">شكوى بخصوص مدرس</option>
+            <option value="C2">شكوى بخصوص استاذ حازم</option>
+            <option value="C3">موضوع اخر</option>
+        </select>
+           <div id="C1Input" class="hidden">
+            <input type="text" name="مدرس_الشكوى" placeholder="اسم المدرس">
+            <textarea name="تفاصيل_الشكوى" placeholder="تفاصيل الشكوى"></textarea>
+        </div>
+
+        <div id="C2Input" class="hidden">
+            <textarea name="تفاصيل_الشكوى_حازم" placeholder="تفاصيل الشكوى"></textarea>
+        </div>
+
+        <div id="C3Input" class="hidden">
+            <textarea name="تفاصيل_موضوع_اخر" placeholder="تفاصيل الموضوع"></textarea>
+        </div>
+        <p></p>
+        <button type="submit">إرسال</button>
+    </form>
+
+    <script>
+      
+        const dropdown = document.getElementById('شكوى');
+        const C1Input = document.getElementById('C1Input');
+        const C2Input = document.getElementById('C2Input');
+        const C3Input = document.getElementById('C3Input');
+
+        dropdown.addEventListener('change', function () {
+      
+            C1Input.classList.add('hidden');
+            C2Input.classList.add('hidden'); 
+
+            C3Input.classList.add('hidden');
+
+            const selectedValue = dropdown.value;
+            if (selectedValue === 'C1') {
+                C1Input.classList.remove('hidden');
+            } else if (selectedValue === 'C2') {
+                C2Input.classList.remove('hidden');
+            } else if (selectedValue === 'C3') {
+                C3Input.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
