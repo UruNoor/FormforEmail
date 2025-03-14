@@ -1,85 +1,196 @@
 <!DOCTYPE html>
-   <html>
-   <head>
-       <title>اعدادية الحسين بن روح</title>
-       <style>
-           .container {
-               text-align: center;
-           }
-           .hidden {
-               display: none;
-           }
-       </style>
-       <meta charset="UTF-8">
-   </head>
-   <body dir="rtl">
-       <div class="container">
-           <h1><p style="color:black;">اعدادية الحسين بن روح</p></h1>
-       </div>
+<html>
+<head>
+    <title>اعدادية الحسين بن روح</title>
+    <meta charset="UTF-8">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            direction: rtl;
+        }
 
-       <h1><p style="color:chocolate;">الشكاوي</p></h1>
-       <form action="https://formsubmit.co/noor23.flower@gmail.com" method="POST">
-           <input type="hidden" name="_captcha" value="false">
-           <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-           <input type="text" name="الاسم" required placeholder="الاسم"> 
-           <p></p> <label> الصف</label>
-           <select name="الصف" id="الصف">
-              <option>الرابع </option>
-              <option>الخامس</option>
-              <option>السادس</option>
-           </select>
-           <p></p> <label>الشعبه</label>  
-           <select name="الشعبة">
-              <option>أ</option>
-              <option>ب</option>
-              <option>ج</option>
-              <option>د</option>
-              <option>ه</option>
-           </select>        
-           <P></P>
-           <label for="select"> اختر نوع الشكوى</label>
-           <select name="نوع_الشكوى" id="شكوى">
-               <option value="C1">شكوى بخصوص مدرس</option>
-               <option value="C2">شكوى بخصوص استاذ حازم</option>
-               <option value="C3">موضوع اخر</option>
-           </select>
-           <div id="C1Input" class="hidden">
-               <input type="text" name="مدرس_الشكوى" placeholder="اسم المدرس">
-               <textarea name="تفاصيل_الشكوى" placeholder="تفاصيل الشكوى"></textarea>
-           </div>
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
 
-           <div id="C2Input" class="hidden">
-               <textarea name="تفاصيل_الشكوى_حازم" placeholder="تفاصيل الشكوى"></textarea>
-           </div>
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-           <div id="C3Input" class="hidden">
-               <textarea name="تفاصيل_موضوع_اخر" placeholder="تفاصيل الموضوع"></textarea>
-           </div>
-           <p></p>
-           <button type="submit">إرسال</button>
-       </form>
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
 
-       <script>
-           const dropdown = document.getElementById('شكوى');
-           const C1Input = document.getElementById('C1Input');
-           const C2Input = document.getElementById('C2Input');
-           const C3Input = document.getElementById('C3Input');
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
 
-           dropdown.addEventListener('change', function () {
-               C1Input.classList.add('hidden');
-               C2Input.classList.add('hidden'); 
-               C3Input.classList.add('hidden');
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
 
-               const selectedValue = dropdown.value;
-               if (selectedValue === 'C1') {
-                   C1Input.classList.remove('hidden');
-               } else if (selectedValue === 'C2') {
-                   C2Input.classList.remove('hidden');
-               } else if (selectedValue === 'C3') {
-                   C3Input.classList.remove('hidden');
-               }
-           });
-       </script>
-   </body>
-   </html>
+        select {
+            appearance: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
 
+        .hidden {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Custom Dropdown Arrow */
+        .select-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>اعدادية الحسين بن روح</h1>
+        <h2 style="color: chocolate; text-align: center;">الشكاوي</h2>
+        <form action="https://formsubmit.co/mustafay867y@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="الاسم" required placeholder="أدخل اسمك">
+
+            <label for="class">الصف:</label>
+            <div class="select-wrapper">
+                <select id="class" name="الصف" required>
+                    <option value="الرابع">الرابع</option>
+                    <option value="الخامس">الخامس</option>
+                    <option value="السادس">السادس</option>
+                </select>
+            </div>
+
+            <label for="section">الشعبة:</label>
+            <div class="select-wrapper">
+                <select id="section" name="الشعبة" required>
+                    <option value="أ">أ</option>
+                    <option value="ب">ب</option>
+                    <option value="ج">ج</option>
+                    <option value="د">د</option>
+                    <option value="ه">ه</option>
+                </select>
+            </div>
+            <label for="complaint-type">اختر نوع الشكوى:</label>
+            <div class="select-wrapper">
+                <select id="complaint-type" name="نوع_الشكوى" required>
+                    <option value="C1">شكوى بخصوص مدرس</option>
+                    <option value="C2">شكوى بخصوص استاذ حازم</option>
+                    <option value="C3">موضوع اخر</option>
+                </select>
+            </div>
+
+            <div id="C1Input" class="hidden">
+                <label for="teacher-name">اسم المدرس:</label>
+                <input type="text" id="teacher-name" name="مدرس_الشكوى" placeholder="أدخل اسم المدرس">
+
+                <label for="complaint-details">تفاصيل الشكوى:</label>
+                <textarea id="complaint-details" name="تفاصيل_الشكوى" placeholder="أدخل تفاصيل الشكوى"></textarea>
+            </div>
+
+            <div id="C2Input" class="hidden">
+                <label for="hazem-complaint">تفاصيل الشكوى ضد الأستاذ حازم:</label>
+                <textarea id="hazem-complaint" name="تفاصيل_الشكوى_حازم" placeholder="أدخل تفاصيل الشكوى"></textarea>
+            </div>
+
+            <div id="C3Input" class="hidden">
+                <label for="other-details">تفاصيل الموضوع:</label>
+                <textarea id="other-details" name="تفاصيل_موضوع_اخر" placeholder="أدخل تفاصيل الموضوع"></textarea>
+            </div>
+
+            <button type="submit">إرسال</button>
+        </form>
+    </div>
+
+    <script>
+        const dropdown = document.getElementById('complaint-type');
+        const C1Input = document.getElementById('C1Input');
+        const C2Input = document.getElementById('C2Input');
+        const C3Input = document.getElementById('C3Input');
+
+        dropdown.addEventListener('change', function () {
+            C1Input.classList.add('hidden');
+            C2Input.classList.add('hidden');
+            C3Input.classList.add('hidden');
+
+            const selectedValue = dropdown.value;
+            if (selectedValue === 'C1') {
+                C1Input.classList.remove('hidden');
+            } else if (selectedValue === 'C2') {
+                C2Input.classList.remove('hidden');
+            } else if (selectedValue === 'C3') {
+                C3Input.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
