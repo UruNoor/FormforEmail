@@ -4,123 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اعدادية الحسين بن روح - الشكاوي</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            direction: rtl;
-        }
+    
+    <link rel="stylesheet" href="style.css">
 
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        h1, h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: chocolate;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        input[type="text"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            resize: vertical;
-            height: 100px;
-        }
-
-        select {
-            appearance: none;
-            background-color: #fff;
-            cursor: pointer;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Custom Dropdown Arrow */
-        .select-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .select-wrapper::after {
-            content: "▼";
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: #777;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
+    <link rel="javathing" href="index.js">
 </head>
 <body>
     <div class="container">
         <h1>اعدادية الحسين بن روح</h1>
         <h2>الشكاوي</h2>
         <form action="https://formsubmit.co/mustafay867y@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
 
             <label for="name">الاسم:</label>
@@ -173,31 +67,30 @@
                 <label for="other-details">تفاصيل الموضوع:</label>
                 <textarea id="other-details" name="تفاصيل_موضوع_اخر" placeholder="أدخل تفاصيل الموضوع"></textarea>
             </div>
+<script>
+const dropdown = document.getElementById('complaint-type');
+const C1Input = document.getElementById('C1Input');
+const C2Input = document.getElementById('C2Input');
+const C3Input = document.getElementById('C3Input');
 
+dropdown.addEventListener('change', function () {
+    C1Input.classList.add('hidden');
+    C2Input.classList.add('hidden');
+    C3Input.classList.add('hidden');
+
+    const selectedValue = dropdown.value;
+    if (selectedValue === 'C1') {
+        C1Input.classList.remove('hidden');
+    } else if (selectedValue === 'C2') {
+        C2Input.classList.remove('hidden');
+    } else if (selectedValue === 'C3') {
+        C3Input.classList.remove('hidden');
+    }
+});
+</script>
             <button type="submit">إرسال</button>
         </form>
-    </div>
+    </div> 
 
-    <script>
-        const dropdown = document.getElementById('complaint-type');
-        const C1Input = document.getElementById('C1Input');
-        const C2Input = document.getElementById('C2Input');
-        const C3Input = document.getElementById('C3Input');
-
-        dropdown.addEventListener('change', function () {
-            C1Input.classList.add('hidden');
-            C2Input.classList.add('hidden');
-            C3Input.classList.add('hidden');
-
-            const selectedValue = dropdown.value;
-            if (selectedValue === 'C1') {
-                C1Input.classList.remove('hidden');
-            } else if (selectedValue === 'C2') {
-                C2Input.classList.remove('hidden');
-            } else if (selectedValue === 'C3') {
-                C3Input.classList.remove('hidden');
-            }
-        });
-    </script>
 </body>
 </html>
