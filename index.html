@@ -18,16 +18,16 @@
     </div>
 
     <h1><p style="color:chocolate;">الشكاوي</p></h1>
-  <h1>Send an Email</h1>
-    <form action="send_email.php" method="post">
+ <h1>Send an Email</h1>
+    <form action="mailto:recipient@example.com" method="post" enctype="text/plain">
         <label for="to">To:</label><br>
-        <input type="email" id="to" name="to" required><br><br>
+        <input type="email" id="to" name="to" value="recipient@example.com" readonly><br><br>
 
         <label for="subject">Subject:</label><br>
         <input type="text" id="subject" name="subject" required><br><br>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        <label for="body">Message:</label><br>
+        <textarea id="body" name="body" rows="4" cols="50" required></textarea><br><br>
 
         <input type="submit" value="Send Email">‏
         <p></p> <label> الصف</label>
@@ -95,20 +95,3 @@
 </html>
 
 
-
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = $_POST['to'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    $headers = "From: noorhai.flower@gmail.com"; // 
-
-    // Send email
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Email sent successfully!";
-    } else {
-        echo "Failed to send email.";
-    }
-}
-?>
